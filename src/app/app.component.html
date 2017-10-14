@@ -1,6 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
+<div class="container">
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
+  <div class="row text-center search">
+    <form action="">
+      <label for="Subject"></label>
+      <input name="subject" type="text" placeholder="search reddit" size="40" ng-keyup="$event.keyCode == 13 && submitFunc()" [(ngModel)]="query">
+      <button (click)="searchPosts()">Submit</button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <li *ngFor="let post of postList" class="post-item">
+          <a href="{{post.data.url}}" target="_blank">
+            <img src="{{post.data.thumbnail}}" alt="">
+          </a>
+          <a href="{{post.data.url}}" target="_blank">
+            {{ post.data.title }}
+          </a>
+          <p><strong>Author: </strong>{{post.data.author}}</p>
+          <p><strong>Ups!!!! </strong>{{ post.data.ups }}</p>
+          <p><strong>Date: </strong>{{ post.data.created | date }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,25 @@
+
+h1{
+  color: darkorange;
+  font-size: 5em;
+  text-shadow: 1px 1px darkslateblue;
+}
+
+.search {
+  margin-top: 5%;
+}
+
+.post-item {
+  background-color: #ccc;
+  margin-top: 5%;
+  padding: 2%;
+}
+
+a{
+  color: darkorange;
+  font-size: 20px;
+}
+
+a:hover{
+ text-decoration: none;
+}

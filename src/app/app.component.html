@@ -12,10 +12,16 @@
       <button (click)="searchPosts()">Submit</button>
     </form>
   </div>
+  <div class="col-md-6">
+    <input type="text"
+      placeholder="Search List"
+      class="filter-input"
+      [(ngModel)]="searchText">
+  </div>
   <div class="row">
     <div class="col-md-12">
       <ul>
-        <li *ngFor="let post of postList" class="post-item">
+        <li *ngFor="let post of postList | searchBy: ['title'] : [searchText]" class="post-item">
           <a href="{{post.data.url}}" target="_blank">
             <img src="{{post.data.thumbnail}}" alt="">
           </a>
